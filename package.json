@@ -1,0 +1,21 @@
+{
+  "name": "vue-messageformat",
+  "version": "0.1",
+  "description": "VueJS plugin to help using translations compiled by messageformat.js",
+  "main": "vue-messageformats.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dischinator/vue-messageformat"
+  },
+  "keywords": [
+    "vue",
+    "i18n",
+    "messageformat"
+  ],
+  "author": "André Perrot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dischinator/vue-messageformat/issues"
+  },
+  "homepage": "https://github.com/dischinator/vue-messageformat"
+}
