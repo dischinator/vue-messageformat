@@ -9,8 +9,10 @@
          * @returns {string} Translation, or identifier in case of error (surrounded by ! means invalid identifier, ? means translation not found)
          */
         Vue.prototype.$i18n = function (identifier, options) {
+            /* global i18n */
+            // the global i18n has to contain compiled messageformat data
             if (typeof this.i18nLanguage === 'undefined') {
-                console.error('Language must be defined.')
+                console.error('Language must be defined. Make sure your instance provides this.i18nLanguage (i.e. = "en")')
                 return identifier
             }
 
@@ -29,7 +31,7 @@
                 // try to get translation
                 return i18n[this.i18nLanguage][path][key](options)
             } catch (e) {
-                console.error('Translation for %s (%s) does not exist', identifier, this.language)
+                console.error('Translation for %s (%s) does not exist', identifier, this.i18nLanguage)
                 // return the identifier as translation surrounded by question marks
                 return '?' + identifier + '?'
             }
