@@ -2,7 +2,7 @@
   "name": "vue-messageformat",
   "version": "0.0.1",
   "description": "VueJS plugin to help using translations compiled by messageformat.js",
-  "main": "vue-messageformats.js",
+  "main": "vue-messageformat.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/dischinator/vue-messageformat"
