@@ -1,6 +1,6 @@
 {
   "name": "vue-messageformat",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "VueJS plugin to help using translations compiled by messageformat.js",
   "main": "vue-messageformat.js",
   "repository": {

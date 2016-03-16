@@ -11,6 +11,11 @@
         Vue.prototype.$i18n = function (identifier, options) {
             /* global i18n */
             // the global i18n has to contain compiled messageformat data
+            if (typeof i18n !== 'object') {
+                console.error('i18n is not defined. You have to include the compiled messageformat object(s)')
+                return identifier
+            }
+
             if (typeof this.i18nLanguage === 'undefined') {
                 console.error('Language must be defined. Make sure your instance provides this.i18nLanguage (i.e. = "en")')
                 return identifier
@@ -49,8 +54,8 @@
          * @returns {boolean}
          */
         Vue.prototype.$i18nLanguageIsValid = function (language) {
-            /* global {[]} i18n */
-            return i18n.indexOf(language) !== -1
+            /* global i18n */
+            return i18n.hasOwnProperty(language)
         }
     }
 
