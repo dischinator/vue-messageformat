@@ -16,6 +16,11 @@
                 return identifier
             }
 
+            if (!this.$i18nLanguageIsValid(this.i18nLanguage)) {
+                console.error('Language "%s" is invalid.', this.i18nLanguage)
+                return identifier
+            }
+
             var parts = identifier.split('_')
             if (parts.length < 2) {
                 console.error('Wrong identifier "%s"', identifier)
@@ -35,6 +40,17 @@
                 // return the identifier as translation surrounded by question marks
                 return '?' + identifier + '?'
             }
+        }
+
+        /**
+         * Checks if given language is valid (=translations are present)
+         *
+         * @param {string} language
+         * @returns {boolean}
+         */
+        Vue.prototype.$i18nLanguageIsValid = function (language) {
+            /* global {[]} i18n */
+            return i18n.indexOf(language) !== -1
         }
     }
 
